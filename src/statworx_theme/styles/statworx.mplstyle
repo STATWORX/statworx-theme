@@ -83,10 +83,10 @@ patch.linewidth:       .5      # edge width in points.
 
 ### FIGURE
 figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)
-figure.dpi:         200       # make it high res
+# figure.dpi:         100       # make it high res
 
 ### SAVEFIG
-savefig.format:    svg
+# savefig.format:    svg         # {png, ps, pdf, svg}
 
 ####################################################################################################
 #### ALL OPTIONS

@@ -568,7 +568,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "mkdocs-matplotlib"
-version = "0.8.3"
+version = "0.9.1"
 description = "Live rendering of python code using matplotlib"
 category = "dev"
 optional = false
@@ -1518,8 +1518,8 @@ mkdocs-material-extensions = [
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
 ]
 mkdocs-matplotlib = [
-    {file = "mkdocs_matplotlib-0.8.3-py3-none-any.whl", hash = "sha256:5497577e15723d61d21cfac652b68e05565374134c2ca2e64e781cb77059ed25"},
-    {file = "mkdocs_matplotlib-0.8.3.tar.gz", hash = "sha256:30f538907be37d32c59c3fdf86de9e5bc15ed4e2d11ba21bd56cb1cafd22add9"},
+    {file = "mkdocs_matplotlib-0.9.1-py3-none-any.whl", hash = "sha256:8ecb4e759337fc28516a1ad2c44f0aba53e71a35bdfd2b19d9254b7732f222c4"},
+    {file = "mkdocs_matplotlib-0.9.1.tar.gz", hash = "sha256:854d7643d215ead0bfddc04568aab237c0c319b41413e16f1502c640561784c8"},
 ]
 mkdocstrings = [
     {file = "mkdocstrings-0.18.1-py3-none-any.whl", hash = "sha256:4053929356df8cd69ed32eef71d8f676a472ef72980c9ffd4f933ead1debcdad"},
