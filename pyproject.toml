@@ -4,6 +4,11 @@ version = "0.2.2"
 description = "A color theme for matplotlib using the offical statworx design"
 authors = ["An Hoang <an.hoang@statworx.com>"]
 readme = "README.md"
+license = "MIT"
+keywords = ["theme", "matplotlib", "plotting", "statworx"]
+repository = "https://github.com/AnHo4ng/statworx-theme"
+homepage = "https://statworx-theme.readthedocs.io/en/latest"
+documentation = "https://statworx-theme.readthedocs.io/en/latest"
 
 [tool.poetry.dependencies]
 python = "~3.8.9"
