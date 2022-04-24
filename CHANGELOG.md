@@ -1,3 +1,10 @@
+## 0.4.5 (2022-04-24)
+
+
+- Merge branch 'dev'
+- [ORG:FIX] Make plots smaller
+- [ORG:FIX] Update lock file
+
 ## 0.4.4 (2022-04-24)
 
 
