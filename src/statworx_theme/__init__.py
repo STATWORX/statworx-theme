@@ -4,4 +4,4 @@
 from .colormaps import *
 from .utils import apply_style  # unimport:skip
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
