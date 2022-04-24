@@ -1,3 +1,9 @@
+## 0.4.4 (2022-04-24)
+
+
+- [CI:FIX] Streamline readthedocs fix
+- [ORG:FIX] Plot figures as svg by default
+
 ## 0.4.3 (2022-04-24)
 
 
