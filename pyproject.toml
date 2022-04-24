@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "siptatworx_theme"
+name = "statworx_theme"
 version = "0.2.0"
 description = "A color theme for matplotlib using the offical statworx design"
 authors = ["An Hoang <an.hoang@statworx.com>"]
