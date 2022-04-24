@@ -12,7 +12,7 @@ A color theme plugin for the [matplotlib](https://matplotlib.org/) library and a
 This package also registers commonly used [color maps](https://matplotlib.org/stable/tutorials/colors/colormaps.html) for use in presentations.
 
 <center>
-    <img src="./docs/assets/sample.png" width="60%" />
+    <img src="./docs/assets/sample.png" width="70%" />
 </center>
 
 ## Quick Start
