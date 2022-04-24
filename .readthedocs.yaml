@@ -21,4 +21,3 @@ python:
       extra_requirements:
         - "all"
     - requirements: docs/requirements.txt
-    - requirements: docs/fix-requirements.txt # HACK: this is a workaround
