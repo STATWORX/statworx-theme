@@ -2,3 +2,4 @@ mkdocs-material
 mkdocs-matplotlib
 mkdocstrings
 mkdocstrings-python
+pygments==2.11.2
