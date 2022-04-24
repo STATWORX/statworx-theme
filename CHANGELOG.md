@@ -1,3 +1,10 @@
+## 0.4.1 (2022-04-24)
+
+
+- Merge pull request #3 from AnHo4ng/dev
+- Fix
+- [CI:FIX] Fix requirements
+
 ## 0.4.0 (2022-04-24)
 
 
