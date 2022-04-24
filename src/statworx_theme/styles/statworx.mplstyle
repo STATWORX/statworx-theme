@@ -17,6 +17,8 @@ lines.markersize  : 4            # markersize, in points
 
 ### FONT
 font.family         : sans-serif
+font.weight: 100
+font.sans-serif: Arial, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 
 ### AXES
 axes.facecolor      : 00000000  # axes background color
@@ -61,10 +63,12 @@ legend.facecolor     : FFFFFF   # legend background color (when 'inherit' uses a
 legend.edgecolor : 000000D9 # legend edge color (when 'inherit' uses axes.edgecolor)
 
 legend.fancybox      : False  # if True, use a rounded box for the
-legend.fontsize      : 9
 legend.shadow        : False
 legend.frameon       : True   # whether or not to draw a frame around legend
 legend.framealpha    : 0.12    # opacity of of legend frame
+
+legend.fontsize:      10
+legend.title_fontsize: 12
 
 ### MARKER
 markers.fillstyle: full ## full|left|right|bottom|top|none
@@ -76,6 +80,11 @@ text.color : black
 patch.edgecolor:       white # if forced, or patch is not filled
 patch.force_edgecolor: False  # True to always use edgecolor
 patch.linewidth:       .5      # edge width in points.
+
+### FIGURE
+figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)
+figure.dpi:         200       # make it high res
+
 
 ####################################################################################################
 #### ALL OPTIONS
