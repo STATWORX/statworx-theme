@@ -28,7 +28,7 @@ def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     # register color map
     cmap = ListedColormap(colors, N=len(colors), name=name)
     with warnings.catch_warnings():
-        warnings.simplefilter("error")
+        warnings.simplefilter("ignore")
         plt.register_cmap(name, cmap)
 
     # dark magic shit
@@ -48,7 +48,7 @@ def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColorm
     """
     cmap = LinearSegmentedColormap.from_list(name, colors)
     with warnings.catch_warnings():
-        warnings.simplefilter("error")
+        warnings.simplefilter("ignore")
         plt.register_cmap(name, cmap)
     return cmap
 
