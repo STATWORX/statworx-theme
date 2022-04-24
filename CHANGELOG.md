@@ -1,3 +1,9 @@
+## 0.4.3 (2022-04-24)
+
+
+- Merge branch 'dev' into origin/master
+- [ORG:FIX] Fix docs requirements
+
 ## 0.4.2 (2022-04-24)
 
 
