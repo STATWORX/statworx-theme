@@ -1,3 +1,14 @@
+## 0.4.0 (2022-04-24)
+
+
+- Merge pull request #2 from AnHo4ng/dev
+- Update
+- [ORG:FIX] Update sample image
+- [ORG:ENH] Update poetry dependencies
+- [ORG:FIX] Ignore warnings
+- [ORG:FEAT] Change font config in mplstyle
+- [ORG:DOCS] Add changelog to mkdocs
+
 ## 0.3.0 (2022-04-24)
 
 
