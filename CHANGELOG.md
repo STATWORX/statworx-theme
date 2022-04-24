@@ -1,3 +1,10 @@
+## 0.4.2 (2022-04-24)
+
+
+- Merge branch 'dev'
+- [ORG:FIX] Update docs requirements
+- Merge remote-tracking branch 'origin/master' into dev
+
 ## 0.4.1 (2022-04-24)
 
 
