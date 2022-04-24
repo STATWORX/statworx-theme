@@ -4,7 +4,7 @@ A color theme plugin for the [matplotlib](https://matplotlib.org/) library and a
 This package also registers commonly used [color maps](https://matplotlib.org/stable/tutorials/colors/colormaps.html) for use in presentations.
 
 <center>
-    <img src="./assets/sample.png" width="400" />
+    <img src="./assets/sample.png" width="60%" />
 </center>
 
 ## Quick Start
@@ -24,5 +24,8 @@ apply_style()
 
 ## Gallery
 
-<!-- TODO: Add link -->
-We have an extensive gallery of figures using the statworx theme. You can see them [here](abc).
+We have an extensive gallery of figures using the statworx theme. You can see them [here](https://statworx-theme.readthedocs.io/en/latest/gallery.html).
+
+<center>
+    <img src="./assets/gallery.png" width="80%"/>
+</center>
