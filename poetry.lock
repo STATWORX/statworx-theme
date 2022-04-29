@@ -543,6 +543,18 @@ Markdown = ">=3.3"
 mkdocs = ">=1.1"
 
 [[package]]
+name = "mkdocs-include-markdown-plugin"
+version = "3.3.0"
+description = "Mkdocs Markdown includer plugin."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+dev = ["bump2version (==1.0.1)", "flake8 (==3.9.2)", "flake8-implicit-str-concat (==0.2.0)", "flake8-print (==4.0.0)", "isort (==5.9.1)", "mdpo (==0.3.61)", "pre-commit (==2.13.0)", "pytest (==6.2.5)", "pytest-cov (==3.0.0)", "pyupgrade (==2.19.4)", "yamllint (==1.26.1)"]
+test = ["pytest (==6.2.5)", "pytest-cov (==3.0.0)"]
+
+[[package]]
 name = "mkdocs-material"
 version = "8.2.10"
 description = "Documentation that simply works"
@@ -1141,7 +1153,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.8.9"
-content-hash = "b9a2501640f54a56937abb84cc5280e61857bdccdbbe50b659eb519b03110e77"
+content-hash = "32b25ac4014ad0647ee6c8b35be9418d5eb8f507a07708ba80b356a708f26756"
 
 [metadata.files]
 appnope = [
@@ -1508,6 +1520,10 @@ mkdocs = [
 mkdocs-autorefs = [
     {file = "mkdocs-autorefs-0.4.1.tar.gz", hash = "sha256:70748a7bd025f9ecd6d6feeba8ba63f8e891a1af55f48e366d6d6e78493aba84"},
     {file = "mkdocs_autorefs-0.4.1-py3-none-any.whl", hash = "sha256:a2248a9501b29dc0cc8ba4c09f4f47ff121945f6ce33d760f145d6f89d313f5b"},
+]
+mkdocs-include-markdown-plugin = [
+    {file = "mkdocs_include_markdown_plugin-3.3.0-py3-none-any.whl", hash = "sha256:d820523a28c893b92f4c5c383332d36379874a3741f4fe04f11bf41afca18a2b"},
+    {file = "mkdocs_include_markdown_plugin-3.3.0.tar.gz", hash = "sha256:1462d343f150b59e78f0aebf9ff9ef9d591fbd9630193e0c9d661abf6df92d6a"},
 ]
 mkdocs-material = [
     {file = "mkdocs-material-8.2.10.tar.gz", hash = "sha256:11bafe7a32d072439942cab7d1bb36b965a237371b978ba1da868b222dae8cf5"},
