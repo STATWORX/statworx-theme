@@ -11,9 +11,7 @@
 A color theme plugin for the [matplotlib](https://matplotlib.org/) library and all its derivatives, which automatically applies the official statworx color theme.
 This package also registers commonly used [color maps](https://matplotlib.org/stable/tutorials/colors/colormaps.html) for use in presentations.
 
-<center>
-    <img src="./docs/assets/sample.svg" width="70%" />
-</center>
+![Sample](./docs/assets/sample.svg)
 
 ## Quick Start
 
@@ -34,6 +32,4 @@ apply_style()
 
 We have an extensive gallery of figures using the statworx theme. You can see them [here](https://statworx-theme.readthedocs.io/en/latest/gallery.html).
 
-<center>
-    <img src="./docs/assets/gallery.png" width="80%"/>
-</center>
+![Sample](./docs/assets/gallery.png)
