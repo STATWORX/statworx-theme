@@ -1,3 +1,15 @@
+## 0.5.0 (2022-04-29)
+
+
+- Merge pull request #5 from AnHo4ng/dev
+- Update Color Scheme
+- [NBK:ENH] Update Example Notebooks
+- [ORG:ENH] Update pyproject.toml with url to documentation
+- [ORG:DOCS] Update examples in README
+- [ORG:DOCS] Update documentation for new color schema
+- [ORG:ENH] Add official statworx theme
+- [ORG:STYLE] Update matplotlib style config
+
 ## 0.4.5 (2022-04-24)
 
 
