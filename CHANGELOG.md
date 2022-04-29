@@ -1,3 +1,12 @@
+## 0.6.0 (2022-04-29)
+
+
+- Merge pull request #6 from AnHo4ng/dev
+- Fix
+- [ORG:DOCS] Use markdown syntax in README to include images
+- [ORG:ENH] Use README as index.md in mkdocs
+- [ORG:ENH] Update sample plot for README
+
 ## 0.5.0 (2022-04-29)
 
 
