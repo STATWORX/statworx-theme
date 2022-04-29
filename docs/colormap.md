@@ -4,7 +4,6 @@
 
 ```python
 # mkdocs: render
-
 def plot_color_gradients(category, cmap_list):
     import numpy as np
     import matplotlib.pyplot as plt
@@ -40,14 +39,14 @@ import statworx_theme
 
 ### Discrete Maps
 
-=== "Discrete"
+```python
+# mkdocs: render
 
-    ```python
-    # mkdocs: render
+plot_color_gradients('Discrete Statworx Themes',
+                     ['stwx:standard', 'stwx:alternative', 'stwx:deep'])
+```
 
-    plot_color_gradients('Discrete Statworx Themes',
-                         ['stwx:standard', 'stwx:alternative', 'stwx:deep'])
-    ```
+### Continous Maps
 
 === "Qualitative"
 
@@ -56,8 +55,6 @@ import statworx_theme
     plot_color_gradients('Qualitative Statworx Themes',
                          ['stwx:good2bad', 'stwx:bad2good'])
     ```
-
-### Continous Maps
 
 === "Fading"
 
@@ -113,7 +110,6 @@ import statworx_theme
 
     ```python
     # mkdocs: render
-
     import seaborn as sns
     import matplotlib.pyplot as plt
 
@@ -130,7 +126,6 @@ import statworx_theme
 
     ```python
     # mkdocs: render
-
     import seaborn as sns
     import matplotlib.pyplot as plt
 
@@ -147,7 +142,6 @@ import statworx_theme
 
     ```python
     # mkdocs: render
-
     import seaborn as sns
     import matplotlib.pyplot as plt
 
