@@ -11,6 +11,29 @@
 #   |_| |_| |_|_____|_|  |_|_____|
 #
 
+
+# ### AXES
+axes.titleweight:   bold # font weight of title
+# axes.labelweight:   100  # font weight of title
+
+axes.facecolor      : 00000000  # axes background color
+axes.edgecolor      : 0000006d   # axes edge color
+axes.labelcolor     : 000000D9
+
+
+axes.spines.left:   True  # display axis spines
+axes.spines.bottom: True
+axes.spines.top:    False
+axes.spines.right:  False
+
+axes.linewidth      : 1.0     # edge linewidth
+axes.grid           : True   # display grid or not
+axes.titlesize      : 12   # fontsize of the axes title
+axes.titlepad       : 15   # vertical offset of the axes title
+axes.labelsize      : 12  # fontsize of the x any y labels
+axes.labelpad       : 8.0     # space between label and axis
+axes.prop_cycle    : cycler('color', ['0000BF', '9BAEC1', '9999FF', '6C7D8C', 'C7014F', '83FF83', 'FF9EC4', '009600'])
+
 ### LINES
 lines.linewidth   : 1.5     # line width in points
 lines.markersize  : 4            # markersize, in points
@@ -20,22 +43,11 @@ font.family         : sans-serif
 font.weight: 100
 font.sans-serif: Arial, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 
-### AXES
-axes.facecolor      : 00000000  # axes background color
-axes.edgecolor      : 0000003D   # axes edge color
-axes.labelcolor     : 000000D9
-
-axes.linewidth      : 1.0     # edge linewidth
-axes.grid           : True   # display grid or not
-axes.titlesize      : 12   # fontsize of the axes title
-axes.titlepad       : 15   # vertical offset of the axes title
-axes.labelsize      : 12  # fontsize of the x any y labels
-axes.labelpad       : 8.0     # space between label and axis
-axes.prop_cycle    : cycler('color', ['0000ff', 'FB0059', '18C205', 'FEFF09', '596A79', '8781FF', 'FD88B8', '76FF70', 'FEFF88', 'B7C0C6'])
-
 ### TICKS
-xtick.color          : 000000D9      # color of the tick labels
-ytick.color          : 000000D9      # color of the tick labels
+xtick.color          : 0000003d      # color of the tick labels
+ytick.color          : 0000003d   # color of the tick labels
+xtick.labelcolor          : 000000bb      # color of the tick labels
+ytick.labelcolor          : 000000bb   # color of the tick labels
 
 xtick.major.size     : 8.25      # major tick size in points
 xtick.minor.size     : 4.125      # minor tick size in points
@@ -54,21 +66,22 @@ ytick.minor.pad      : 5      # distance to the minor tick label in points
 ytick.labelsize      : 9 # fontsize of the tick labels
 
 ### GRID
-grid.color       :   000000BB   # grid color
+grid.color       :   000000   # grid color
+grid.linestyle: -       # solid
 grid.linewidth   :   0.75     # in points
-grid.alpha       :   0.24     # transparency, between 0.0 and 1.0
+grid.alpha       :   .24     # transparency, between 0.0 and 1.0
 
 ### LEGEND
 legend.facecolor     : FFFFFF   # legend background color (when 'inherit' uses axes.facecolor)
-legend.edgecolor : 000000D9 # legend edge color (when 'inherit' uses axes.edgecolor)
+legend.edgecolor : BBBBBB # legend edge color (when 'inherit' uses axes.edgecolor)
 
 legend.fancybox      : False  # if True, use a rounded box for the
 legend.shadow        : False
 legend.frameon       : True   # whether or not to draw a frame around legend
-legend.framealpha    : 0.12    # opacity of of legend frame
+legend.framealpha    : .7   # opacity of of legend frame
 
 legend.fontsize:      10
-legend.title_fontsize: 12
+legend.title_fontsize: 10
 
 ### MARKER
 markers.fillstyle: full ## full|left|right|bottom|top|none
@@ -83,11 +96,11 @@ patch.linewidth:       .5      # edge width in points.
 
 ### FIGURE
 figure.titlesize:   large     # size of the figure title (``Figure.suptitle()``)
+# figure.titleweight: bold  # weight of the figure title
 # figure.dpi:         100       # make it high res
 
 ### SAVEFIG
 # savefig.format:    svg         # {png, ps, pdf, svg}
-
 ####################################################################################################
 #### ALL OPTIONS
 ####################################################################################################

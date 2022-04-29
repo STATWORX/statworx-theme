@@ -1,21 +1,58 @@
-# define statoworx design colors
-BLUE = "#0000ff"
-LIGHT_BLUE = "#8781FF"
-PINK = "#FB0059"
-LIGHT_PINK = "#FD88B8"
-GREEN = "#18C205"
-LIGHT_GREEN = "#76FF70"
-YELLOW = "#FEFF09"
-LIGHT_YELLOW = "#FEFF88"
-GREY = "#596A79"
-LIGHT_GREY = "#B7C0C6"
+from typing import Dict
+
+# black and white
 BLACK = "#000000"
-WHITE = "#ffffff"
+WHITE = "#FFFFFF"
+
+# GREY
+DEEP_GREY = "#6C7D8C"
+DARK_GREY = "#7D8AA4"
+DARKER_GREY = "#283440"
+GRAY = "#B6BDCC"
+LIGHT_GREY = "#9BAEC1"
+LIGHTER_GREY = "#EBF0F2"
+
+# YELLOW
+DEEP_YELLOW = "#FFFF00"
+
+# VIOLEt
+DEEP_VIOLET = "#7f00ff"
+
+# CYAN
+DEEP_CYAN = "#01BAEF"
+
+# ORANGE
+DEEP_ORANGE = "#FF781F"
+
+# BLUE
+DEEP_BLUE = "#0000FF"
+BLUE = "#0000BF"
+LIGHT_BLUE = "#9999FF"
+
+# RED
+DARK_RED = "#C7014F"
+DEEP_RED = "#FE0D6C"
+LIGHT_RED = "#FF9EC4"
+
+# GREEN
+DEEP_GREEN = "#00C800"
+LIGHT_GREEN = "#83FF83"
+DARK_GREEN = "#009600"
+
+# define standard colors
+C0 = BLUE
+C1 = LIGHT_GREY
+C2 = LIGHT_BLUE
+C3 = DEEP_GREY
+C4 = DARK_RED
+C5 = LIGHT_GREEN
+C6 = LIGHT_RED
+C7 = DARK_GREEN
 
 # create color dict
-COLOR_DICT = {
-    "Pk": PINK,
+COLOR_DICT: Dict[str, str] = {
+    "Rd": DARK_RED,
     "Bl": BLUE,
-    "Gn": GREEN,
-    "Yw": YELLOW,
+    "Gn": DARK_GREEN,
+    "Yw": DEEP_YELLOW,
 }

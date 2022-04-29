@@ -4,16 +4,21 @@ from .colors import (
     BLACK,
     BLUE,
     COLOR_DICT,
-    GREEN,
-    GREY,
+    DARK_GREEN,
+    DARK_RED,
+    DEEP_BLUE,
+    DEEP_CYAN,
+    DEEP_GREEN,
+    DEEP_GREY,
+    DEEP_ORANGE,
+    DEEP_RED,
+    DEEP_VIOLET,
+    DEEP_YELLOW,
     LIGHT_BLUE,
     LIGHT_GREEN,
     LIGHT_GREY,
-    LIGHT_PINK,
-    LIGHT_YELLOW,
-    PINK,
+    LIGHT_RED,
     WHITE,
-    YELLOW,
 )
 from .utils import register_blended_cmap, register_listed_cmap
 
@@ -21,75 +26,49 @@ from .utils import register_blended_cmap, register_listed_cmap
 # DISCRETE COLORMAPS
 ####################################################################################################
 
-default_colors = [
+standard_colors = [
     BLUE,
-    PINK,
-    GREEN,
-    YELLOW,
-    GREY,
-    LIGHT_BLUE,
-    LIGHT_PINK,
-    LIGHT_GREEN,
-    LIGHT_YELLOW,
     LIGHT_GREY,
+    LIGHT_BLUE,
+    DEEP_GREY,
+    DARK_RED,
+    LIGHT_GREEN,
+    LIGHT_RED,
+    DARK_GREEN,
 ]
-default_cmap = register_listed_cmap(default_colors, "stwx:default")
+standard_cmap = register_listed_cmap(standard_colors, "stwx:standard")
 
-paired_colors = [
+alternative_colors = [
     BLUE,
-    LIGHT_BLUE,
-    PINK,
-    LIGHT_PINK,
-    GREEN,
-    LIGHT_GREEN,
-    YELLOW,
-    LIGHT_YELLOW,
-    GREY,
     LIGHT_GREY,
+    DARK_RED,
+    LIGHT_GREEN,
+    LIGHT_BLUE,
+    DEEP_GREY,
+    LIGHT_RED,
+    DARK_GREEN,
 ]
-paired_cmap = register_listed_cmap(paired_colors, "stwx:paired")
+alternative_cmap = register_listed_cmap(alternative_colors, "stwx:alternative")
+
 
 deep_colors = [
-    BLUE,
-    PINK,
-    GREEN,
-    YELLOW,
-    GREY,
+    DEEP_BLUE,
+    DEEP_RED,
+    DEEP_GREEN,
+    DEEP_VIOLET,
+    DEEP_CYAN,
+    DEEP_ORANGE,
 ]
 deep_cmap = register_listed_cmap(deep_colors, "stwx:deep")
-
-light_colors = [
-    LIGHT_BLUE,
-    LIGHT_PINK,
-    LIGHT_GREEN,
-    LIGHT_YELLOW,
-    LIGHT_GREY,
-]
-light_cmap = register_listed_cmap(light_colors, "stwx:light")
-
-black_colors = [
-    BLACK,
-    BLUE,
-    PINK,
-    GREEN,
-    YELLOW,
-    GREY,
-    LIGHT_BLUE,
-    LIGHT_PINK,
-    LIGHT_GREEN,
-    LIGHT_YELLOW,
-    LIGHT_GREY,
-]
-black_cmap = register_listed_cmap(black_colors, "stwx:black")
 
 ####################################################################################################
 # BLENDED COLORMAPS
 ####################################################################################################
 
-bad2good_colors = [PINK, YELLOW, GREEN]
+bad2good_colors = [DARK_RED, DEEP_YELLOW, DARK_GREEN]
 bad2good_cmap = register_blended_cmap(bad2good_colors, "stwx:bad2good")
 
-good2bad_colors = [GREEN, YELLOW, PINK]
+good2bad_colors = [DARK_GREEN, DEEP_YELLOW, DARK_RED]
 good2bad_cmap = register_blended_cmap(good2bad_colors, "stwx:good2bad")
 
 for (name1, color1), (name2, color2) in product(COLOR_DICT.items(), COLOR_DICT.items()):
