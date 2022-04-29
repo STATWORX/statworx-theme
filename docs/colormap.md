@@ -38,101 +38,124 @@ def plot_color_gradients(category, cmap_list):
 import statworx_theme
 ```
 
-```python
-# mkdocs: render
-plot_color_gradients('Discrete Statworx Themes',
-                     ['stwx:default', 'stwx:paired', 'stwx:deep', 'stwx:light', "stwx:black"])
-```
+### Discrete Maps
 
-```python
-# mkdocs: render
-plot_color_gradients('Qualitative Statworx Themes',
-                     ['stwx:good2bad', 'stwx:bad2good'])
-```
+=== "Discrete"
 
-```python
-# mkdocs: render
-plot_color_gradients(
-    "Fading Statworx Themes", [f"stwx:{c}_fade" for c in ["Bl", "Pk", "Gn", "Yw"]]
-)
-```
+    ```python
+    # mkdocs: render
 
-```python
-# mkdocs: render
-from itertools import product
+    plot_color_gradients('Discrete Statworx Themes',
+                         ['stwx:standard', 'stwx:alternative', 'stwx:deep'])
+    ```
 
-color_names = ["Bl", "Pk", "Gn", "Yw"]
-plot_color_gradients(
-    "Blending Statworx Themes",
-    [f"stwx:{c1}{c2}_blend" for (c1, c2) in product(color_names, color_names) if c1 != c2],
-)
-```
+=== "Qualitative"
 
-```python
-# mkdocs: render
-from itertools import product
+    ```python
+    # mkdocs: render
+    plot_color_gradients('Qualitative Statworx Themes',
+                         ['stwx:good2bad', 'stwx:bad2good'])
+    ```
 
-color_names = ["Bl", "Pk", "Gn", "Yw"]
-plot_color_gradients(
-    "Diverging Statworx Themes",
-    [f"stwx:{c1}{c2}_diverging" for (c1, c2) in product(color_names, color_names)],
-)
-```
+### Continous Maps
 
-```python
-# mkdocs: render
-from itertools import product
+=== "Fading"
 
-color_names = ["Bl", "Pk", "Gn", "Yw"]
-plot_color_gradients(
-    "Rising Statworx Themes",
-    [f"stwx:{c}_rise" for c in color_names],
-)
-```
+    ```python
+    # mkdocs: render
+    plot_color_gradients(
+        "Fading Statworx Themes", [f"stwx:{c}_fade" for c in ["Bl", "Rd", "Gn", "Yw"]]
+    )
+    ```
+
+=== "Blending"
+
+    ```python
+    # mkdocs: render
+    from itertools import product
+
+    color_names = ["Bl", "Rd", "Gn", "Yw"]
+    plot_color_gradients(
+        "Blending Statworx Themes",
+        [f"stwx:{c1}{c2}_blend" for (c1, c2) in product(color_names, color_names) if c1 != c2],
+    )
+    ```
+
+=== "Diverging"
+
+    ```python
+    # mkdocs: render
+    from itertools import product
+
+    color_names = ["Bl", "Rd", "Gn", "Yw"]
+    plot_color_gradients(
+        "Diverging Statworx Themes",
+        [f"stwx:{c1}{c2}_diverging" for (c1, c2) in product(color_names, color_names)],
+    )
+    ```
+
+=== "Rising"
+
+    ```python
+    # mkdocs: render
+    from itertools import product
+
+    color_names = ["Bl", "Rd", "Gn", "Yw"]
+    plot_color_gradients(
+        "Rising Statworx Themes",
+        [f"stwx:{c}_rise" for c in color_names],
+    )
+    ```
 
 ## Usage
 
-```python
-# mkdocs: render
+=== "stwx:good2bad"
 
-import seaborn as sns
-import matplotlib.pyplot as plt
+    ```python
+    # mkdocs: render
 
-# Load the example flights dataset and convert to long-form
-flights_long = sns.load_dataset("flights")
-flights = flights_long.pivot("month", "year", "passengers")
+    import seaborn as sns
+    import matplotlib.pyplot as plt
 
-# Draw a heatmap with the numeric values in each cell
-f, ax = plt.subplots(figsize=(9, 6))
-sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:Bl_fade")
-```
+    # Load the example flights dataset and convert to long-form
+    flights_long = sns.load_dataset("flights")
+    flights = flights_long.pivot("month", "year", "passengers")
 
-```python
-# mkdocs: render
+    # Draw a heatmap with the numeric values in each cell
+    f, ax = plt.subplots(figsize=(9, 6))
+    sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:good2bad")
+    ```
 
-import seaborn as sns
-import matplotlib.pyplot as plt
+=== "stwx:Bl_fade"
 
-# Load the example flights dataset and convert to long-form
-flights_long = sns.load_dataset("flights")
-flights = flights_long.pivot("month", "year", "passengers")
+    ```python
+    # mkdocs: render
 
-# Draw a heatmap with the numeric values in each cell
-f, ax = plt.subplots(figsize=(9, 6))
-sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:Pk_fade")
-```
+    import seaborn as sns
+    import matplotlib.pyplot as plt
 
-```python
-# mkdocs: render
+    # Load the example flights dataset and convert to long-form
+    flights_long = sns.load_dataset("flights")
+    flights = flights_long.pivot("month", "year", "passengers")
 
-import seaborn as sns
-import matplotlib.pyplot as plt
+    # Draw a heatmap with the numeric values in each cell
+    f, ax = plt.subplots(figsize=(9, 6))
+    sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:Bl_fade")
+    ```
 
-# Load the example flights dataset and convert to long-form
-flights_long = sns.load_dataset("flights")
-flights = flights_long.pivot("month", "year", "passengers")
+=== "stwx:Rd_rise"
 
-# Draw a heatmap with the numeric values in each cell
-f, ax = plt.subplots(figsize=(9, 6))
-sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:good2bad")
-```
+    ```python
+    # mkdocs: render
+
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+
+    # Load the example flights dataset and convert to long-form
+    flights_long = sns.load_dataset("flights")
+    flights = flights_long.pivot("month", "year", "passengers")
+
+    # Draw a heatmap with the numeric values in each cell
+    f, ax = plt.subplots(figsize=(9, 6))
+    sns.heatmap(flights, annot=True, fmt="d", linewidths=.5, ax=ax, cmap="stwx:Rd_rise")
+    ```
