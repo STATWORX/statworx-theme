@@ -1,3 +1,11 @@
+## 0.6.1 (2022-05-31)
+
+
+- Merge pull request #7 from AnHo4ng/dev
+- Update
+- [DEP:FIX] Make python version more permissible
+- [ORG:FIX] Fix inconsitency in documentation
+
 ## 0.6.0 (2022-04-29)
 
 
