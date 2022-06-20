@@ -1,3 +1,15 @@
+## 0.7.0 (2022-06-20)
+
+
+- Merge branch 'dev'
+- [OPS:DOCS] Update docs
+- [ORG:ENH] Make private functions hidden
+- [ORG:DOCS] Update code section in mkdocs
+- [OPS:ENH] Update README.md
+- [ORG:DOCS] Remove changelog and licence page from mkdocs
+- [DEP:ENH] Update Dependencies
+- [ORG:ENH] Rename author to STATWORX
+
 ## 0.6.1 (2022-05-31)
 
 
