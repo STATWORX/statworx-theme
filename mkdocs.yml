@@ -2,8 +2,8 @@ site_name: "Statworx Theme"
 site_description: "A color theme for matplotlib using the offical statworx design"
 copyright: Made with ❤ from Statworx
 use_directory_urls: false
-repo_url: https://github.com/AnHo4ng/statworx-theme
-repo_name: AnHo4ng/statworx-theme
+repo_url: https://github.com/STATWORX/statworx-theme
+repo_name: STATWORX/statworx-theme
 
 theme:
   palette:
@@ -81,13 +81,14 @@ plugins:
             show_source: true
             show_root_heading: true
             show_root_toc_entry: false
+            filters: []
       watch:
         - src
 nav:
   - Overview: index.md
   - Gallery: gallery.md
   - Colormaps: colormap.md
-  - Changelog: changelog.md
-  - License: license.md
-  - Contribution: contribution.md
+  # - Changelog: changelog.md
+  # - License: license.md
+  # - Contribution: contribution.md
   - Code Documentation: code.md

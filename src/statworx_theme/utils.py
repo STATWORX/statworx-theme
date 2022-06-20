@@ -15,7 +15,7 @@ from seaborn.palettes import MPL_QUAL_PALS
 import statworx_theme
 
 
-def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
+def _register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     """Register a listed colormat in matplotlib.
 
     Args:
@@ -36,7 +36,7 @@ def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     return cmap
 
 
-def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
+def _register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
     """Register a blended colormap to matplotlib.
 
     Args:
@@ -53,7 +53,7 @@ def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColorm
     return cmap
 
 
-def install_styles() -> None:
+def _install_styles() -> None:
     """Install matplotlib style files with suffix `.mplstyle` to the matplotlib config dir."""
     # list all theme files
     config_path = join(dirname(statworx_theme.__file__), "styles")
@@ -74,5 +74,5 @@ def install_styles() -> None:
 
 def apply_style() -> None:
     """Apply the statworx color style."""
-    install_styles()
+    _install_styles()
     plt.style.use("statworx")

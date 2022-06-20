@@ -1,9 +1,9 @@
 # Colormaps
 
-## Dependencies
-
 ```python
+# mkdocs: hidecode
 # mkdocs: render
+
 def plot_color_gradients(category, cmap_list):
     import numpy as np
     import matplotlib.pyplot as plt
@@ -30,12 +30,18 @@ def plot_color_gradients(category, cmap_list):
         ax.set_axis_off()
 ```
 
-## Colormaps
+## Import Colormaps
+
+To import the statworx theme colormaps to a matplotlib, simply run the `apply_style` functions as shown below.
+Now you can call these colormaps by their name like their [native counterparts](https://matplotlib.org/stable/tutorials/colors/colormaps.html). Note that the name of all statworx colormaps start with `stwx:`.
 
 ```python
 # mkdocs: render
-import statworx_theme
+from statworx_theme import apply_style
+apply_style()
 ```
+
+## List of Available Colormaps
 
 ### Discrete Maps
 

@@ -1,13 +1,15 @@
 # Gallery
 
+The gallery should help you to see the themes and colors applied in different plots. This template can also serve as an inspiration to get an idea of which graphics might be suitable for your case. Note that this template should not be considered as a 1 to 1 guideline but rather as a tool which helps statworx to create a more coherent picture when visualizing data.
+
 ## Apply Style
+
+To apply the statworx theme to a matplotlib plot, simply run the `apply_style` functions as shown below.
+All subsequently generated plots will have the statworx colors.
 
 ```python
 # mkdocs: render
-# mkdocs: hideoutput
 from statworx_theme import apply_style
-
-# apply style
 apply_style()
 ```
 
@@ -64,7 +66,10 @@ apply_style()
     sns.despine(left=True)
     ```
 
-=== "Stacked Histogram"
+=== "Histogram"
+
+    !!! hint
+        When making a histogram, always explore multiple bin widths. In addition, avoid overlapping histograms as they can be confused with stacked bar charts.
 
     ```python
     # mkdocs: render
@@ -222,6 +227,10 @@ apply_style()
 
 === "Bar Plot"
 
+    !!! hint
+        One should only rearrange bars, when there is no natural ordering to the categories. Whenever there is a natural ordering (i.e. when our categorical variable is an ordered factor) one should keep the original ordering in the visualization.
+        When bars are of similar length it is visually less appealing to use bar plots (“Moire effect”). In this case, one can resort to use Lollipop charts.
+
     ```python
     # mkdocs: render
 
@@ -272,7 +281,10 @@ apply_style()
     sns.despine(left=True, bottom=True)
     ```
 
-=== "Wisker Plot"
+=== "Boxplot"
+
+    !!! hint
+         Adding jittered points to a box plot is useful to see the underlying distribution of the data.
 
     ```python
     # mkdocs: render
