@@ -6,7 +6,7 @@ authors = ["An Hoang <an.hoang@statworx.com>"]
 readme = "README.md"
 license = "MIT"
 keywords = ["theme", "matplotlib", "plotting", "statworx"]
-repository = "https://github.com/AnHo4ng/statworx-theme"
+repository = "https://github.com/STATWORX/statworx-theme"
 homepage = "https://statworx-theme.readthedocs.io/en/latest"
 
 [tool.poetry.dependencies]
