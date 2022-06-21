@@ -2,7 +2,10 @@
 name = "statworx_theme"
 version = "0.7.0"
 description = "A color theme for matplotlib using the offical statworx design"
-authors = ["An Hoang <an.hoang@statworx.com>"]
+authors = [
+  "statworx Team <accounts@statworx.com>",
+  "An Hoang <an.hoang@statworx.com>",
+]
 readme = "README.md"
 license = "MIT"
 keywords = ["theme", "matplotlib", "plotting", "statworx"]
