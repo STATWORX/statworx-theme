@@ -1,3 +1,8 @@
+## 0.8.0 (2022-06-21)
+
+
+- [ORG:ENH] Add statworx as package maintainer
+
 ## 0.7.0 (2022-06-20)
 
 
