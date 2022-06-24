@@ -6,8 +6,9 @@ from os.path import dirname, join
 from shutil import copy
 from typing import List
 
-import matplotlib
+import matplotlib as mpl
 import matplotlib.pyplot as plt
+from cycler import Cycler
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 from matplotlib.style.core import reload_library
 from seaborn.palettes import MPL_QUAL_PALS
@@ -60,7 +61,7 @@ def _install_styles() -> None:
     theme_files = [join(config_path, f) for f in os.listdir(config_path)]
 
     # get config directory
-    config_dir = matplotlib.get_configdir()
+    config_dir = mpl.get_configdir()
     style_dir = join(config_dir, "stylelib")
     os.makedirs(style_dir, exist_ok=True)
 
@@ -76,3 +77,21 @@ def apply_style() -> None:
     """Apply the statworx color style."""
     _install_styles()
     plt.style.use("statworx")
+
+
+def apply_client_colors(colors: List[str], cmap_name: str = "stwx:client") -> None:
+    """Apply custom client colors to statworx style.
+
+    Args:
+        colors: List of client colors as hex codes
+        cmap_name: Custom name of new colormap. Defaults to "stwx:client".
+    """
+    # apply statworx style
+    apply_style()
+
+    # add colors as a custom cmap
+    _register_listed_cmap(colors, cmap_name)
+
+    # add colors to current style
+    color_list = [{"color": c} for c in colors]
+    mpl.rcParams["axes.prop_cycle"] = Cycler(color_list)
