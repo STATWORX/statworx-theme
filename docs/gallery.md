@@ -119,31 +119,6 @@ apply_style()
                  data=fmri)
     ```
 
-=== "Stacked Line Plot"
-
-    ```python
-    # mkdocs: render
-    import matplotlib.pyplot as plt
-    import matplotx
-    import numpy as np
-
-    # create data
-
-    rng = np.random.default_rng(0)
-    offsets = [1.0, 1.50, 1.60]
-    labels = ["no balancing", "CRV-27", "CRV-27*"]
-    x0 = np.linspace(0.0, 3.0, 100)
-    y = [offset * x0 / (x0 + 1) + 0.1 * rng.random(len(x0)) for offset in offsets]
-
-    # plot
-    for yy, label in zip(y, labels):
-        plt.plot(x0, yy, label=label)
-    plt.xlabel("distance [m]")
-    matplotx.ylabel_top("voltage [V]")  # move ylabel to the top, rotate
-    matplotx.line_labels()  # line labels to the right
-    plt.show()
-    ```
-
 ## Relationship
 
 === "Regression Plot"
