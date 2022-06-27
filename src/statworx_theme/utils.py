@@ -4,7 +4,7 @@ from os.path import dirname, join
 
 # get path to conffig files
 from shutil import copy
-from typing import List
+from typing import Any, List
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -16,7 +16,7 @@ from seaborn.palettes import MPL_QUAL_PALS
 import statworx_theme
 
 
-def _register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
+def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     """Register a listed colormat in matplotlib.
 
     Args:
@@ -37,7 +37,7 @@ def _register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     return cmap
 
 
-def _register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
+def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
     """Register a blended colormap to matplotlib.
 
     Args:
@@ -79,19 +79,25 @@ def apply_style() -> None:
     plt.style.use("statworx")
 
 
-def apply_client_colors(colors: List[str], cmap_name: str = "stwx:client") -> None:
-    """Apply custom client colors to statworx style.
+def apply_custom_colors(
+    colors: List[str], cmap_name: str = "stwx:custom", **kwargs: Any
+) -> None:
+    """Apply custom custom colors to statworx style.
 
     Args:
-        colors: List of client colors as hex codes
-        cmap_name: Custom name of new colormap. Defaults to "stwx:client".
+        colors: List of custom colors as hex codes
+        cmap_name: Custom name of new colormap. Defaults to "stwx:custom".
+        **kwargs: Addition parameters that are passed to the style config
     """
     # apply statworx style
     apply_style()
 
     # add colors as a custom cmap
-    _register_listed_cmap(colors, cmap_name)
+    register_listed_cmap(colors, cmap_name)
 
     # add colors to current style
     color_list = [{"color": c} for c in colors]
     mpl.rcParams["axes.prop_cycle"] = Cycler(color_list)
+
+    # apply kwargs
+    mpl.rcParams.update(kwargs)
