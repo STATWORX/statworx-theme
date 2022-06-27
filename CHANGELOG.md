@@ -1,3 +1,17 @@
+## 0.9.0 (2022-06-27)
+
+
+- Merge branch 'dev'
+- [ORG:DOCS] Update README.md
+- [NBK:ENH] Update example notebooks
+- [OPS:ENH] Update function names
+- [ORG:FEAT] Add option to add custom client colors
+- [DEP:DEL] Remove matplotlibx as a dependency
+- [NBK:DOCS] Format text in notebooks
+- Merge remote-tracking branch 'origin/master' into dev
+- [NBK:ENH] Update example usage notebook
+- [ORG:ENH] Add matplotx timeseries example
+
 ## 0.8.0 (2022-06-21)
 
 
