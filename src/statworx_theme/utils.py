@@ -4,10 +4,11 @@ from os.path import dirname, join
 
 # get path to conffig files
 from shutil import copy
-from typing import List
+from typing import Any, List
 
-import matplotlib
+import matplotlib as mpl
 import matplotlib.pyplot as plt
+from cycler import Cycler
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 from matplotlib.style.core import reload_library
 from seaborn.palettes import MPL_QUAL_PALS
@@ -15,7 +16,7 @@ from seaborn.palettes import MPL_QUAL_PALS
 import statworx_theme
 
 
-def _register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
+def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     """Register a listed colormat in matplotlib.
 
     Args:
@@ -36,7 +37,7 @@ def _register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     return cmap
 
 
-def _register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
+def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
     """Register a blended colormap to matplotlib.
 
     Args:
@@ -60,7 +61,7 @@ def _install_styles() -> None:
     theme_files = [join(config_path, f) for f in os.listdir(config_path)]
 
     # get config directory
-    config_dir = matplotlib.get_configdir()
+    config_dir = mpl.get_configdir()
     style_dir = join(config_dir, "stylelib")
     os.makedirs(style_dir, exist_ok=True)
 
@@ -76,3 +77,27 @@ def apply_style() -> None:
     """Apply the statworx color style."""
     _install_styles()
     plt.style.use("statworx")
+
+
+def apply_custom_colors(
+    colors: List[str], cmap_name: str = "stwx:custom", **kwargs: Any
+) -> None:
+    """Apply custom custom colors to statworx style.
+
+    Args:
+        colors: List of custom colors as hex codes
+        cmap_name: Custom name of new colormap. Defaults to "stwx:custom".
+        **kwargs: Addition parameters that are passed to the style config
+    """
+    # apply statworx style
+    apply_style()
+
+    # add colors as a custom cmap
+    register_listed_cmap(colors, cmap_name)
+
+    # add colors to current style
+    color_list = [{"color": c} for c in colors]
+    mpl.rcParams["axes.prop_cycle"] = Cycler(color_list)
+
+    # apply kwargs
+    mpl.rcParams.update(kwargs)

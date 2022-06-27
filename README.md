@@ -33,3 +33,21 @@ apply_style()
 There is an extensive gallery of figures that use the Statworx theme that you can draw inspiration from. You can find it [here](https://statworx-theme.readthedocs.io/en/latest/gallery.html).
 
 ![Sample](./docs/assets/gallery.png)
+
+## Custom Colors
+
+You can also use a custom list of color for the color scheme beside the official statworx colors.
+There is a convenience function for that which is described below.
+This simply changes the colors.
+In case you want to change the entire style you should implement your own `.mplstyle` file (see [this](https://matplotlib.org/stable/tutorials/introductory/customizing.html)).
+
+```python
+from statworx_theme import apply_custom_colors
+
+custom_colors = [
+    DARK_BLUE := "#0A526B",
+    DARK_RED := "#6B0020",
+    GREY := "#808285",
+]
+apply_custom_colors(custom_colors)
+```
