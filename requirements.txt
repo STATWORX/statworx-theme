@@ -1,0 +1,6 @@
+mkdocs-include-markdown-plugin
+mkdocs-material
+mkdocs-matplotlib>=0.8.4
+mkdocstrings
+mkdocstrings-python
+pygments==2.11.1
