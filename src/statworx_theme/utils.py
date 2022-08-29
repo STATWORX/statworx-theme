@@ -406,23 +406,3 @@ def apply_custom_colors_plotly(
     )
 
     pio.templates.default = "custom_plotly_theme"
-
-
-def apply_style_plotnine() -> None:
-    """Apply the statworx matplotlib style for plotnine.
-
-    The colors are not automatically applied."""
-    import plotnine as p9
-
-    apply_style()
-
-    # rc parameters such as categorical colors (plt.rcParams["axes.prop_cycle"]) are used, colormaps are not passed and need to
-    # be set manually for each plot using the get_stwx_cmaps function
-    statworx_theme = p9.themes.theme_matplotlib(rc=plt.rcParams, use_defaults=False)
-
-    assert (
-        statworx_theme.rcParams["axes.prop_cycle"].by_key()["color"]
-        == plt.rcParams["axes.prop_cycle"].by_key()["color"]
-    )
-
-    p9.theme_set(statworx_theme)
