@@ -14,4 +14,4 @@ from .utils import (  # unimport:skip
     apply_custom_colors_plotly,
 )
 
-__version__ = "0.9.0"
+__version__ = "0.10.0"

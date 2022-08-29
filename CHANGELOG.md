@@ -1,3 +1,13 @@
+## 0.10.0 (2022-08-29)
+
+
+- Merge pull request #2 from STATWORX/dev
+- Merge dev into master
+- ORG:BFX Cleanup utils.
+- NBK:ENH Add notebooks for altair and plotly themes. Reorganize notebooks.
+- NBK:ENH Add all diverging and fading colormaps into the Colormaps notebook
+- ORG:ENH Add additional theme for altair and plotly as optional extras
+
 ## 0.9.0 (2022-06-27)
 
 
