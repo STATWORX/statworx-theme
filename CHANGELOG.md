@@ -1,3 +1,15 @@
+## 0.11.0 (2022-08-29)
+
+
+- Merge pull request #4 from STATWORX/dev
+- Dev
+- [CI:FIX] Update version of steps in github action
+- [ORG:STYLE] Run linter on project
+- [CI:FEAT] Add darlint as an dependey of flake8
+- Merge pull request #3 from STATWORX/hotfix-comitizen
+- Fix version of vega-datasets to 0.9.0
+- [DEP:FIX] Fix version of vega-datasets to 0.9.0
+
 ## 0.10.0 (2022-08-29)
 
 
