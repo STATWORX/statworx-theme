@@ -12,6 +12,7 @@ from .utils import (  # unimport:skip
     apply_custom_colors_altair,
     apply_style_plotly,
     apply_custom_colors_plotly,
+    apply_style_plotnine,
 )
 
 __version__ = "0.9.0"
