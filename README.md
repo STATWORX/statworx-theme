@@ -24,8 +24,8 @@ pip install statworx-theme
 For usage of altair and plotly extra dependencies need to be installed using pip.
 
 ```console
-pip install statworx-theme[altair]
-pip install statworx-theme[plotly]
+pip install "statworx-theme[altair]"
+pip install "statworx-theme[plotly]"
 ```
 
 For using the styles inside a poetry managed project use `poetry add` with extras.
