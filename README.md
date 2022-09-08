@@ -97,7 +97,7 @@ custom_colors = [
     DARK_RED := "#6B0020",
     GREY := "#808285",
 ]
-apply_custom_colors_altair(custom_colors)
+apply_custom_colors_altair(category=custom_colors)
 ```
 
 #### Plotly
@@ -109,5 +109,5 @@ custom_colors = [
     DARK_RED := "#6B0020",
     GREY := "#808285",
 ]
-apply_custom_colors_plotly(custom_colors)
+apply_custom_colors_plotly(category=custom_colors)
 ```
