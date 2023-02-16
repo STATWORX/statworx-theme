@@ -4,7 +4,7 @@ from os.path import dirname, join
 
 # get path to config files
 from shutil import copy
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -127,9 +127,8 @@ def apply_style_altair(n_groups_ordinal: int = 10) -> None:
     """Apply the statworx color style for Altair.
 
     Args:
-        n_groups_ordinal (int, optional): The number of groups to be plotted for the ordinal color map.
-            Default to 10.
-
+        n_groups_ordinal (int): The number of groups to be plotted for the ordinal
+            color map. Defaults to 10.
     """
     import altair as alt
 
@@ -275,12 +274,12 @@ def _create_altair_theme(
 
 
 def apply_custom_colors_altair(
-    primary: str = None,
-    category: List[str] = None,
-    diverging: List[str] = None,
-    heatmap: List[str] = None,
-    ramp: List[str] = None,
-    ordinal: List[str] = None,
+    primary: Optional[str] = None,
+    category: Optional[List[str]] = None,
+    diverging: Optional[List[str]] = None,
+    heatmap: Optional[List[str]] = None,
+    ramp: Optional[List[str]] = None,
+    ordinal: Optional[List[str]] = None,
     n_groups_ordinal: int = 10,
 ) -> None:
     """Applies a custom altair theme with custom color palettes to the statworx style.
@@ -298,10 +297,10 @@ def apply_custom_colors_altair(
             Defaults to None (statworx style is kept).
         ordinal (List[str], optional): Ordinal color plaette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        n_groups_ordinal (int, optional): The number of groups to be plotted using the ordinal color map.
+        n_groups_ordinal (int): The number of groups to be plotted using the ordinal color map.
             Defaults to 10.
     """
-    import altair as alt
+    import altair as alt  # type: ignore
 
     stwx_cmaps = get_stwx_cmaps()
     _create_altair_theme(
@@ -321,7 +320,7 @@ def apply_custom_colors_altair(
 
 def apply_style_plotly() -> None:
     """Apply the statworx color style for plotly."""
-    import plotly.io as pio
+    import plotly.io as pio  # type: ignore
 
     apply_style()
 
@@ -371,11 +370,11 @@ def _create_plotly_theme(
 
 
 def apply_custom_colors_plotly(
-    category: List[str] = None,
-    diverging: List[str] = None,
-    sequential: List[str] = None,
-    sequential_minus: List[str] = None,
-    heatmap: List[str] = None,
+    category: Optional[List[str]] = None,
+    diverging: Optional[List[str]] = None,
+    sequential: Optional[List[str]] = None,
+    sequential_minus: Optional[List[str]] = None,
+    heatmap: Optional[List[str]] = None,
 ):
     """Applies a custom plotly theme with custom color palettes to the statworx style.
 
@@ -391,7 +390,7 @@ def apply_custom_colors_plotly(
         heatmap (List[str]): Heatmap color plaette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
     """
-    import plotly.io as pio
+    import plotly.io as pio  # type: ignore
 
     stwx_cmaps = get_stwx_cmaps()
     _create_plotly_theme(

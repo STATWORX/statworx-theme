@@ -24,8 +24,8 @@ pip install statworx-theme
 For usage of altair and plotly extra dependencies need to be installed using pip.
 
 ```console
-pip install statworx-theme[altair]
-pip install statworx-theme[plotly]
+pip install "statworx-theme[altair]"
+pip install "statworx-theme[plotly]"
 ```
 
 For using the styles inside a poetry managed project use `poetry add` with extras.
@@ -97,7 +97,7 @@ custom_colors = [
     DARK_RED := "#6B0020",
     GREY := "#808285",
 ]
-apply_custom_colors_altair(custom_colors)
+apply_custom_colors_altair(category=custom_colors)
 ```
 
 #### Plotly
@@ -109,5 +109,5 @@ custom_colors = [
     DARK_RED := "#6B0020",
     GREY := "#808285",
 ]
-apply_custom_colors_plotly(custom_colors)
+apply_custom_colors_plotly(category=custom_colors)
 ```

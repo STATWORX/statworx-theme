@@ -1,3 +1,25 @@
+## 0.11.0 (2022-08-29)
+
+
+- Merge pull request #4 from STATWORX/dev
+- Dev
+- [CI:FIX] Update version of steps in github action
+- [ORG:STYLE] Run linter on project
+- [CI:FEAT] Add darlint as an dependey of flake8
+- Merge pull request #3 from STATWORX/hotfix-comitizen
+- Fix version of vega-datasets to 0.9.0
+- [DEP:FIX] Fix version of vega-datasets to 0.9.0
+
+## 0.10.0 (2022-08-29)
+
+
+- Merge pull request #2 from STATWORX/dev
+- Merge dev into master
+- ORG:BFX Cleanup utils.
+- NBK:ENH Add notebooks for altair and plotly themes. Reorganize notebooks.
+- NBK:ENH Add all diverging and fading colormaps into the Colormaps notebook
+- ORG:ENH Add additional theme for altair and plotly as optional extras
+
 ## 0.9.0 (2022-06-27)
 
 
