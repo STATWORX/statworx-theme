@@ -1,3 +1,15 @@
+## 0.12.0 (2023-08-09)
+
+
+- [CI:FIX] Fix Bump version
+- [ORG:FEAT] Update dependencies
+- Merge pull request #6 from STATWORX/dev
+- ORG:BFX Updated mistake in README.md
+- ORG:BFX Updated mistake in README.md
+- Merge pull request #5 from STATWORX/dev
+- ORG:BFX Updated installation for extras in readme
+- ORG:BFX Updated installation for extras in readme
+
 ## 0.11.0 (2022-08-29)
 
 

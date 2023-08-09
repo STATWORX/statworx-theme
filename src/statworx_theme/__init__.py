@@ -14,4 +14,4 @@ from .utils import (  # unimport:skip
     register_listed_cmap,
 )
 
-__version__ = "0.11.0"
+__version__ = "0.12.0"
