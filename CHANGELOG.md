@@ -1,3 +1,8 @@
+## 0.12.1 (2023-08-09)
+
+
+- [CI:FIX] Run github actions with personal access token
+
 ## 0.12.0 (2023-08-09)
 
 
