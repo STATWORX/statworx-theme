@@ -1,3 +1,19 @@
+## 0.13.0 (2023-12-20)
+
+
+- Merge pull request #9 from STATWORX/feat/8/IADOOP-18/update-dependencies
+- [DEP:ENH] Dependency Upgrade
+- [PPL:FIX] Upgrade unimport to 1.0.1 where distutils dependency was removed
+- [PPL:FIX] Downgrade unimport to 1.0.0
+- [PPL:FIX] Update all precommit hooks
+- [PPL:FIX] Adapt pre-commit and github actions to copier template
+- [DPLY:FIX] Upgrade pre commit config
+- [PPL:FIX] Reset pre-commit yaml
+- [PPL:FIX] Fix flake8 dependency
+- [PPL:FIX] Fix pre-commit unimport
+- Merge branch 'master' into feat/8/IADOOP-18/update-dependencies
+- [DEP:ENH] Upgrade python to 3.10., altair to 5.2.0, plotly to 5.10.0 and seaborn to 0.13.0
+
 ## 0.12.1 (2023-08-09)
 
 
