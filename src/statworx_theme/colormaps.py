@@ -1,3 +1,4 @@
+"""Colormaps for the statworx theme."""
 from itertools import product
 
 from .colors import (

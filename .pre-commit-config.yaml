@@ -2,20 +2,22 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.5.0
     hooks:
-      - id: check-toml
+      - id: check-ast
+      - id: check-case-conflict
       - id: check-yaml
-      - id: trailing-whitespace
+      - id: debug-statements
       - id: end-of-file-fixer
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
 
-  - repo: https://github.com/psf/black
-    rev: 22.3.0
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.13.0
     hooks:
-      - id: black
-        name: black
-        description: A formatter for Python files
-        files: \.py(\.j2)?$
+      - id: commitizen
+        stages: [commit-msg]
 
   - repo: https://github.com/roy-ht/pre-commit-jupyter
     rev: v1.2.1
@@ -27,7 +29,7 @@ repos:
           - "[pin];[donotremove]"
 
   - repo: https://github.com/psf/black
-    rev: 22.3.0
+    rev: 23.12.0
     hooks:
       - id: black
         name: black
@@ -35,29 +37,56 @@ repos:
         files: \.py$
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 5.13.2
     hooks:
       - id: isort
         name: isort
         description: isort your imports, so you don't have to.
-        files: \.py(\.j2)$
+        files: \.py$
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 5.0.4
+    rev: 6.1.0
     hooks:
       - id: flake8
         name: flake8
         description: Your Tool For Style Guide Enforcement
-        files: \.py(\.j2)?$
-        additional_dependencies:
-          [flake8-docstrings, pep8-naming, darglint==1.8.1]
+        files: \.py$
+        additional_dependencies: [darglint==1.8.1]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        name: mypy
+        description: Optional Static Typing for Python
+        files: \.py$
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.3.1
+    rev: 1.7.1
     hooks:
       - id: nbqa-black
         additional_dependencies: [black==22.3.0]
+        args: [--nbqa-mutate]
+      - id: nbqa-pyupgrade
+        additional_dependencies: [pyupgrade==2.10.0]
+        args: [--nbqa-mutate, --py36-plus]
       - id: nbqa-isort
         additional_dependencies: [isort==5.7.0]
+        args: [--nbqa-mutate]
       - id: nbqa-check-ast
         additional_dependencies: [pre-commit-hooks]
+        args: [--nbqa-mutate]
+
+  - repo: https://github.com/hakancelik96/unimport
+    rev: 1.1.0
+    hooks:
+      - id: unimport
+        name: unimport
+        description: A linter, formatter for finding and removing unused import statements
+        args:
+          - -r
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+      - id: pyupgrade
