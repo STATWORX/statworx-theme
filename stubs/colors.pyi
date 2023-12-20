@@ -1,0 +1,32 @@
+from typing import Dict
+
+BLACK: str
+WHITE: str
+DEEP_GREY: str
+DARK_GREY: str
+DARKER_GREY: str
+GRAY: str
+LIGHT_GREY: str
+LIGHTER_GREY: str
+DEEP_YELLOW: str
+DEEP_VIOLET: str
+DEEP_CYAN: str
+DEEP_ORANGE: str
+DEEP_BLUE: str
+BLUE: str
+LIGHT_BLUE: str
+DARK_RED: str
+DEEP_RED: str
+LIGHT_RED: str
+DEEP_GREEN: str
+LIGHT_GREEN: str
+DARK_GREEN: str
+C0 = BLUE
+C1 = LIGHT_GREY
+C2 = LIGHT_BLUE
+C3 = DEEP_GREY
+C4 = DARK_RED
+C5 = LIGHT_GREEN
+C6 = LIGHT_RED
+C7 = DARK_GREEN
+COLOR_DICT: Dict[str, str]
