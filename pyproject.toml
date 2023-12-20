@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "statworx_theme"
-version = "0.10.0"
+version = "0.12.1"
 description = "A color theme for matplotlib using the offical statworx design"
 authors = [
   "statworx Team <accounts@statworx.com>",
@@ -14,13 +14,13 @@ repository = "https://github.com/STATWORX/statworx-theme"
 homepage = "https://statworx-theme.readthedocs.io/en/latest"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-seaborn = "^0.13.0"
-altair = { version = "^5.2.0", optional = true }
-plotly = { version = "^5.10.0", optional = true }
-nbformat = { version = "^5.4.0", optional = true }
-vega-datasets = { version = "^0.9.0", optional = true }
-statsmodels = { version = "^0.13.0", optional = true }
+python = ">=3.8,<=3.12"
+seaborn = ">=0.11.2"
+altair = { version = ">=4.2.0", optional = true }
+plotly = { version = ">=5.10.0", optional = true }
+nbformat = { version = ">=5.4.0", optional = true }
+vega-datasets = { version = ">=0.9.0", optional = true }
+statsmodels = { version = ">=0.13.0", optional = true }
 
 [tool.poetry.dev-dependencies]
 black = ">=22.3.0"
