@@ -1,5 +1,4 @@
-"""statworx_theme module
-"""
+"""statworx_theme module."""
 
 from .colormaps import *
 from .utils import (  # unimport:skip

@@ -1,3 +1,4 @@
+"""Utility functions for the statworx theme."""
 import os
 import warnings
 from os.path import dirname, join

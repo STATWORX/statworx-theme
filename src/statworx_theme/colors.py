@@ -1,3 +1,4 @@
+"""Color definitions for the statworx theme."""
 from typing import Dict
 
 # black and white
