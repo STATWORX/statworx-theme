@@ -12,10 +12,6 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/hakancelik96/unimport
-    rev: 0.9.5
-    hooks:
-      - id: unimport
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.23.0
@@ -49,7 +45,7 @@ repos:
         files: \.py$
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 3.9.2
+    rev: 5.0.4
     hooks:
       - id: flake8
         name: flake8
@@ -81,14 +77,8 @@ repos:
         additional_dependencies: [pre-commit-hooks]
         args: [--nbqa-mutate]
 
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.23.0
-    hooks:
-      - id: commitizen
-        stages: [commit-msg]
-
   - repo: https://github.com/hakancelik96/unimport
-    rev: 0.9.5
+    rev: 1.0.0
     hooks:
       - id: unimport
         name: unimport
