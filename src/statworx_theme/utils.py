@@ -1,4 +1,5 @@
 """Utility functions for the statworx theme."""
+
 import os
 import warnings
 from os.path import dirname, join
@@ -18,7 +19,7 @@ import statworx_theme
 
 
 def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
-    """Register a listed colormat in matplotlib.
+    """Register a listed colormap in matplotlib.
 
     Args:
         colors: Color of the colormap
@@ -31,7 +32,7 @@ def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     cmap = ListedColormap(colors, N=len(colors), name=name)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        plt.register_cmap(name, cmap)
+        mpl.colormaps.register(cmap=cmap, name=name)
 
     # dark magic shit
     MPL_QUAL_PALS.update({name: len(colors)})
@@ -51,7 +52,7 @@ def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColorm
     cmap = LinearSegmentedColormap.from_list(name, colors)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        plt.register_cmap(name, cmap)
+        mpl.colormaps.register(cmap=cmap, name=name)
     return cmap
 
 
@@ -117,7 +118,7 @@ def get_stwx_cmaps(as_hex=True) -> Dict[str, Any]:
     cmaps = [plt.get_cmap(cmap) for cmap in cmap_names]
     if as_hex:
         cmap_hex_codes = [
-            [mpl.colors.rgb2hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps
+            [mpl.colors.to_hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps
         ]
         return dict(zip(cmap_names, cmap_hex_codes))
     else:
@@ -310,9 +311,11 @@ def apply_custom_colors_altair(
         diverging=stwx_cmaps["stwx:BlRd_diverging"] if diverging is None else diverging,
         heatmap=stwx_cmaps["stwx:BlRd_diverging"] if heatmap is None else heatmap,
         ramp=stwx_cmaps["stwx:BlRd_diverging"] if ramp is None else ramp,
-        ordinal=_shrink_cmap(stwx_cmaps["stwx:bad2good"], n_groups=n_groups_ordinal)
-        if ordinal is None
-        else _shrink_cmap(ordinal, n_groups=n_groups_ordinal),
+        ordinal=(
+            _shrink_cmap(stwx_cmaps["stwx:bad2good"], n_groups=n_groups_ordinal)
+            if ordinal is None
+            else _shrink_cmap(ordinal, n_groups=n_groups_ordinal)
+        ),
         name="custom_altair_theme",
     )
 
@@ -398,9 +401,11 @@ def apply_custom_colors_plotly(
         category=stwx_cmaps["stwx:alternative"] if category is None else category,
         diverging=stwx_cmaps["stwx:BlRd_diverging"] if diverging is None else category,
         sequential=stwx_cmaps["stwx:bad2good"] if sequential is None else sequential,
-        sequential_minus=stwx_cmaps["stwx:good2bad"]
-        if sequential_minus is None
-        else sequential_minus,
+        sequential_minus=(
+            stwx_cmaps["stwx:good2bad"]
+            if sequential_minus is None
+            else sequential_minus
+        ),
         heatmap=stwx_cmaps["stwx:BlRd_diverging"] if heatmap is None else heatmap,
         name="custom_plotly_theme",
     )
