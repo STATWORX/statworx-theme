@@ -117,10 +117,8 @@ def get_stwx_cmaps(as_hex=True) -> Dict[str, Any]:
     cmap_names = [cmap for cmap in plt.colormaps() if cmap.startswith("stwx:")]
     cmaps = [plt.get_cmap(cmap) for cmap in cmap_names]
     if as_hex:
-        from matplotlib import colors
-
         cmap_hex_codes = [
-            [colors.to_hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps
+            [mpl.colors.to_hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps
         ]
         return dict(zip(cmap_names, cmap_hex_codes))
     else:
