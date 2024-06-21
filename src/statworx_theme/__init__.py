@@ -1,7 +1,7 @@
 """statworx_theme module."""
 
-from .colormaps import *
-from .utils import (  # unimport:skip
+from .colormaps import *  # noqa: F403
+from .utils import (
     apply_custom_colors,
     apply_custom_colors_altair,
     apply_custom_colors_plotly,
