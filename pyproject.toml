@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "statworx_theme"
-version = "0.13.0"
+version = "1.0.0"
 description = "A color theme for matplotlib using the offical statworx design"
 authors = [
   "statworx Team <accounts@statworx.com>",
@@ -20,7 +20,7 @@ altair = { version = ">=5.2.0", optional = true }
 plotly = { version = ">=5.10.0", optional = true }
 nbformat = { version = ">=5.4.0", optional = true }
 vega-datasets = { version = ">=0.9.0", optional = true }
-statsmodels = { version = ">=0.13.0", optional = true }
+statsmodels = { version = ">=1.0.0", optional = true }
 
 [tool.poetry.dev-dependencies]
 black = ">=22.3.0"
