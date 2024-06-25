@@ -15,5 +15,6 @@ jobs:
     name: Linting
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v3
-      - uses: pre-commit/action@v3.0.0
+      - uses: actions/setup-python@v5
+      - name: Execute pre-commit tasks
+        uses: pre-commit/action@v3.0.1
