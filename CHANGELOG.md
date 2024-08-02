@@ -1,3 +1,14 @@
+## 1.0.0 (2024-06-24)
+
+
+- Merge pull request #11 from STATWORX/feat/xxx/update-mpl
+- [MOD:FIX] Fix python version
+- [MOD:FIX] Fix python version
+- Merge pull request #10 from STATWORX/feat/xxx/update-mpl
+- [MOD:BREAK] Update matplotlib to fix deprecated functions
+- [MOD:FIX] Fix import
+- [MOD:BREAK] Update matplotlib to fix depcreated functions
+
 ## 0.13.0 (2023-12-20)
 
 
