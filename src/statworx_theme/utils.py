@@ -298,7 +298,7 @@ def apply_custom_colors_altair(
         n_groups_ordinal (int): The number of groups to be plotted using the ordinal color map.
             Defaults to 10.
     """
-    import altair as alt # type: ignore
+    import altair as alt  # type: ignore
 
     stwx_cmaps = get_stwx_cmaps()
     _create_altair_theme(
@@ -390,7 +390,7 @@ def apply_custom_colors_plotly(
         heatmap (list[str]): Heatmap color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
     """
-    import plotly.io as pio 
+    import plotly.io as pio
 
     stwx_cmaps = get_stwx_cmaps()
     _create_plotly_theme(

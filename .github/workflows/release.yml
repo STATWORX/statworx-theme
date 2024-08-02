@@ -31,11 +31,11 @@ jobs:
         if: steps.setup-python.outputs.cache-hit != 'true'
         run: poetry install --all-extras --no-interaction --no-root
         shell: bash
-  
+
       - name: Install library
         run: poetry install --all-extras --no-interaction
         shell: bash
-    
+
       - name: Build
         run: |
           poetry build
