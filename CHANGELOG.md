@@ -1,3 +1,11 @@
+## 2.0.0 (2024-08-16)
+
+
+- [ORG:FIX] Refactor repository (#12)
+- * [ORG:BREAK] Refactor repository
+
+* [OPS:FIX] Perform ruff changes.
+
 ## 1.0.0 (2024-06-24)
 
 
