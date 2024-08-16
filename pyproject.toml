@@ -24,7 +24,7 @@ vega-datasets = { version = ">=0.9.0", optional = true }
 statsmodels = { version = ">=2.0.0", optional = true }
 
 [tool.poetry.group.dev.dependencies]
-ruff = ">=0.4.10"
+ruff = ">=0.6.0"
 pre-commit = ">=2.18.0"
 commitizen = ">=2.21.2"
 ipykernel = ">=6.9.2"
@@ -48,7 +48,6 @@ build-backend = "poetry.core.masonry.api"
 line-length = 100
 fix = true
 target-version = "py39"
-include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
 
 [tool.ruff.lint]
 select = [
@@ -93,10 +92,6 @@ ignore = [
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.ruff.lint.isort]
-known-first-party = ["statworx_theme"]
-known-local-folder = ["src"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 18
