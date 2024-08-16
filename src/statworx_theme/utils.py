@@ -6,7 +6,7 @@ from os.path import dirname, join
 
 # get path to config files
 from shutil import copy
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -18,7 +18,7 @@ from seaborn.palettes import MPL_QUAL_PALS
 import statworx_theme
 
 
-def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
+def register_listed_cmap(colors: list[str], name: str) -> ListedColormap:
     """Register a listed colormap in matplotlib.
 
     Args:
@@ -39,7 +39,7 @@ def register_listed_cmap(colors: List[str], name: str) -> ListedColormap:
     return cmap
 
 
-def register_blended_cmap(colors: List[str], name: str) -> LinearSegmentedColormap:
+def register_blended_cmap(colors: list[str], name: str) -> LinearSegmentedColormap:
     """Register a blended colormap to matplotlib.
 
     Args:
@@ -81,9 +81,7 @@ def apply_style() -> None:
     plt.style.use("statworx")
 
 
-def apply_custom_colors(
-    colors: List[str], cmap_name: str = "stwx:custom", **kwargs: Any
-) -> None:
+def apply_custom_colors(colors: list[str], cmap_name: str = "stwx:custom", **kwargs: Any) -> None:
     """Apply custom custom colors to statworx style.
 
     Args:
@@ -105,24 +103,22 @@ def apply_custom_colors(
     mpl.rcParams.update(kwargs)
 
 
-def get_stwx_cmaps(as_hex=True) -> Dict[str, Any]:
+def get_stwx_cmaps(as_hex: bool = True) -> dict[str, Any]:
     """Gets the registered colormaps as hex or cmap.
 
     Args:
-        as_hex (bool, optional): Should the cmaps be returned as hexadecimal list or as a cmap. Defaults to True.
+        as_hex (bool, optional): Should the cmaps be returned as hexadecimal list or as a cmap.
+                                    Defaults to True.
 
     Returns:
-        Dict[str, Any]: Dictionary with the colormap name as a key and the hex-list or cmap as value.
+        dict[str, Any]: The colormap name as a key and the hex-list or cmap as value.
     """
     cmap_names = [cmap for cmap in plt.colormaps() if cmap.startswith("stwx:")]
     cmaps = [plt.get_cmap(cmap) for cmap in cmap_names]
     if as_hex:
-        cmap_hex_codes = [
-            [mpl.colors.to_hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps
-        ]
+        cmap_hex_codes = [[mpl.colors.to_hex(cmap(i)) for i in range(cmap.N)] for cmap in cmaps]
         return dict(zip(cmap_names, cmap_hex_codes))
-    else:
-        return dict(zip(cmap_names, cmaps))
+    return dict(zip(cmap_names, cmaps))
 
 
 def apply_style_altair(n_groups_ordinal: int = 10) -> None:
@@ -132,7 +128,7 @@ def apply_style_altair(n_groups_ordinal: int = 10) -> None:
         n_groups_ordinal (int): The number of groups to be plotted for the ordinal
             color map. Defaults to 10.
     """
-    import altair as alt
+    import altair as alt  # type: ignore
 
     apply_style()
 
@@ -151,15 +147,15 @@ def apply_style_altair(n_groups_ordinal: int = 10) -> None:
     alt.themes.enable("statworx_altair_theme")
 
 
-def _shrink_cmap(cmap: List[str], n_groups: int) -> List[str]:
+def _shrink_cmap(cmap: list[str], n_groups: int) -> list[str]:
     """Shrinks the cmap for a fixed number of groups.
 
     Args:
-        cmap (List[str]): The colormap.
+        cmap (list[str]): The colormap.
         n_groups (int): The number of groups in the data to plot.
 
     Returns:
-        List[str]: Shrunken cmap.
+        list[str]: Shrunken cmap.
     """
     nth_element_to_keep = int(len(cmap) / n_groups)
     return cmap[::nth_element_to_keep]
@@ -167,22 +163,22 @@ def _shrink_cmap(cmap: List[str], n_groups: int) -> List[str]:
 
 def _create_altair_theme(
     primary: str,
-    category: List[str],
-    diverging: List[str],
-    heatmap: List[str],
-    ramp: List[str],
-    ordinal: List[str],
+    category: list[str],
+    diverging: list[str],
+    heatmap: list[str],
+    ramp: list[str],
+    ordinal: list[str],
     name: str,
 ) -> None:
-    """Creates the altair theme and registeres it.
+    """Creates the altair theme and registers it.
 
     Args:
         primary (str): The primary color as hexadecimal string (e.g. "#d9d9d9").
-        category (List[str]): Categorical colors as list of hexadecimal strings.
-        diverging (List[str]): Diverging color palette as list of hexadecimal strings.
-        heatmap (List[str]): Heatmap color palette as list of hexadecimal strings.
-        ramp (List[str]): Ramp color palette as list of hexadecimal strings.
-        ordinal (List[str]): Ordinal color plaette as list of hexadecimal strings.
+        category (list[str]): Categorical colors as list of hexadecimal strings.
+        diverging (list[str]): Diverging color palette as list of hexadecimal strings.
+        heatmap (list[str]): Heatmap color palette as list of hexadecimal strings.
+        ramp (list[str]): Ramp color palette as list of hexadecimal strings.
+        ordinal (list[str]): Ordinal color palette as list of hexadecimal strings.
         name (str): The name of the theme.
     """
     import altair as alt
@@ -276,12 +272,12 @@ def _create_altair_theme(
 
 
 def apply_custom_colors_altair(
-    primary: Optional[str] = None,
-    category: Optional[List[str]] = None,
-    diverging: Optional[List[str]] = None,
-    heatmap: Optional[List[str]] = None,
-    ramp: Optional[List[str]] = None,
-    ordinal: Optional[List[str]] = None,
+    primary: str | None = None,
+    category: list[str] | None = None,
+    diverging: list[str] | None = None,
+    heatmap: list[str] | None = None,
+    ramp: list[str] | None = None,
+    ordinal: list[str] | None = None,
     n_groups_ordinal: int = 10,
 ) -> None:
     """Applies a custom altair theme with custom color palettes to the statworx style.
@@ -289,15 +285,15 @@ def apply_custom_colors_altair(
     Args:
         primary (str, optional): The primary color as hexadecimal string (e.g. "#d9d9d9").
             Defaults to None (statworx style is kept).
-        category (List[str], optional): Categorical colors as list of hexadecimal strings.
+        category (list[str], optional): Categorical colors as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        diverging (List[str], optional): Diverging color palette as list of hexadecimal strings.
+        diverging (list[str], optional): Diverging color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        heatmap (List[str], optional): Heatmap color palette as list of hexadecimal strings.
+        heatmap (list[str], optional): Heatmap color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        ramp (List[str], optional): Ramp color palette as list of hexadecimal strings.
+        ramp (list[str], optional): Ramp color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        ordinal (List[str], optional): Ordinal color plaette as list of hexadecimal strings.
+        ordinal (list[str], optional): Ordinal color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
         n_groups_ordinal (int): The number of groups to be plotted using the ordinal color map.
             Defaults to 10.
@@ -342,21 +338,21 @@ def apply_style_plotly() -> None:
 
 
 def _create_plotly_theme(
-    category: List[str],
-    diverging: List[str],
-    sequential: List[str],
-    sequential_minus: List[str],
-    heatmap: List[str],
+    category: list[str],
+    diverging: list[str],
+    sequential: list[str],
+    sequential_minus: list[str],
+    heatmap: list[str],
     name: str,
 ):
-    """Creates the plotly theme and registeres it.
+    """Creates the plotly theme and registers it.
 
     Args:
-        category (List[str]): Categorical colors as list of hexadecimal strings.
-        diverging (List[str]): Diverging color palette as list of hexadecimal strings.
-        sequential (List[str]): Sequential color palette as list of hexadecimal strings.
-        sequential_minus (List[str]): Downwards sequential color palette as list of hexadecimal strings.
-        heatmap (List[str]): Heatmap color plaette as list of hexadecimal strings.
+        category (list[str]): Categorical colors as list of hexadecimal strings.
+        diverging (list[str]): Diverging color palette as list of hexadecimal strings.
+        sequential (list[str]): Sequential color palette as list of hexadecimal strings.
+        sequential_minus (list[str]): Downwards sequential color palette as list of hex strings.
+        heatmap (list[str]): Heatmap color palette as list of hexadecimal strings.
         name (str): The name of the theme.
     """
     import plotly.graph_objects as go
@@ -374,27 +370,27 @@ def _create_plotly_theme(
 
 
 def apply_custom_colors_plotly(
-    category: Optional[List[str]] = None,
-    diverging: Optional[List[str]] = None,
-    sequential: Optional[List[str]] = None,
-    sequential_minus: Optional[List[str]] = None,
-    heatmap: Optional[List[str]] = None,
+    category: list[str] | None = None,
+    diverging: list[str] | None = None,
+    sequential: list[str] | None = None,
+    sequential_minus: list[str] | None = None,
+    heatmap: list[str] | None = None,
 ):
     """Applies a custom plotly theme with custom color palettes to the statworx style.
 
     Args:
-        category (List[str]): Categorical colors as list of hexadecimal strings.
+        category (list[str]): Categorical colors as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        diverging (List[str]): Diverging color palette as list of hexadecimal strings.
+        diverging (list[str]): Diverging color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        sequential (List[str]): Sequential color palette as list of hexadecimal strings.
+        sequential (list[str]): Sequential color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
-        sequential_minus (List[str]): Downwards sequential color palette as list of hexadecimal strings.
+        sequential_minus (list[str]): Downwards sequential color palette as list of hex strings.
             Defaults to None (statworx style is kept).
-        heatmap (List[str]): Heatmap color plaette as list of hexadecimal strings.
+        heatmap (list[str]): Heatmap color palette as list of hexadecimal strings.
             Defaults to None (statworx style is kept).
     """
-    import plotly.io as pio  # type: ignore
+    import plotly.io as pio
 
     stwx_cmaps = get_stwx_cmaps()
     _create_plotly_theme(
@@ -402,9 +398,7 @@ def apply_custom_colors_plotly(
         diverging=stwx_cmaps["stwx:BlRd_diverging"] if diverging is None else category,
         sequential=stwx_cmaps["stwx:bad2good"] if sequential is None else sequential,
         sequential_minus=(
-            stwx_cmaps["stwx:good2bad"]
-            if sequential_minus is None
-            else sequential_minus
+            stwx_cmaps["stwx:good2bad"] if sequential_minus is None else sequential_minus
         ),
         heatmap=stwx_cmaps["stwx:BlRd_diverging"] if heatmap is None else heatmap,
         name="custom_plotly_theme",

@@ -1,5 +1,6 @@
 """Color definitions for the statworx theme."""
-from typing import Dict
+
+from typing import Final
 
 # black and white
 BLACK = "#000000"
@@ -51,7 +52,7 @@ C6 = LIGHT_RED
 C7 = DARK_GREEN
 
 # create color dict
-COLOR_DICT: Dict[str, str] = {
+COLOR_DICT: Final[dict[str, str]] = {
     "Rd": DARK_RED,
     "Bl": BLUE,
     "Gn": DARK_GREEN,
