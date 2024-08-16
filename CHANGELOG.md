@@ -1,3 +1,8 @@
+## 2.0.1 (2024-08-16)
+
+
+- [OPS:FIX] Dont cache in release pipeline (#13)
+
 ## 2.0.0 (2024-08-16)
 
 
