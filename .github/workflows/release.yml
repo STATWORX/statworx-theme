@@ -22,15 +22,8 @@ jobs:
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
-        id: setup-python
         with:
           python-version: 3.12
-          cache: "poetry"
-
-      - name: Install dependencies
-        if: steps.setup-python.outputs.cache-hit != 'true'
-        run: poetry install --all-extras --no-interaction --no-root
-        shell: bash
 
       - name: Install library
         run: poetry install --all-extras --no-interaction
