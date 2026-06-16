@@ -1,5 +1,10 @@
 # Statworx Theme
 
+> [!WARNING]
+> **This package is deprecated and is no longer being developed or maintained.**
+>
+> `statworx-theme` will receive no further updates, bug fixes, or support, and no new releases are planned. The package remains available on PyPI for existing users, but we recommend migrating away from it. Feel free to fork the repository if you wish to continue development independently.
+
 [![PyPI version](https://badge.fury.io/py/statworx-theme.svg)](https://badge.fury.io/py/statworx-theme)
 [![Documentation Status](https://readthedocs.org/projects/statworx-theme/badge/?version=latest)](https://statworx-theme.readthedocs.io/en/latest/?badge=latest)
 [![Release](https://github.com/STATWORX/statworx-theme/actions/workflows/release.yml/badge.svg)](https://github.com/STATWORX/statworx-theme/actions/workflows/release.yml)
